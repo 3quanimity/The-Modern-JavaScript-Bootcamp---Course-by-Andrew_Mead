@@ -1,5 +1,6 @@
-const notes = getSavedNotes();
+let notes = getSavedNotes();
 
+// filters
 const filters = {
   searchText: "",
 };
@@ -25,6 +26,12 @@ document.querySelector("#search-note").addEventListener("input", (e) => {
 });
 
 // Handling #filter-by drop-down
-document.querySelector("#filter-by").addEventListener("input", (e) => {
-  console.log(e.target.value);
+document.querySelector("#filter-by").addEventListener("input", (e) => {});
+
+// Sync data across pages
+window.addEventListener("storage", function (e) {
+  if (e.key === "notes") {
+    notes = JSON.parse(e.newValue);
+    renderNotes(notes, filters);
+  }
 });
