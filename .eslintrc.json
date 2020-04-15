@@ -30,8 +30,8 @@
     "react/prop-types": 0,
     "no-console": 1,
     "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhaustive-deps": 1,
-    "no-undef": "off" // only for this project
+    "react-hooks/exhaustive-deps": 1
+    // "no-undef": "off" // only for this project
   },
   "settings": {
     "react": {
