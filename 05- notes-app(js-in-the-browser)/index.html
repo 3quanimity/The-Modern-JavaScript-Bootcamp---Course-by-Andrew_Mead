@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Notes App</title>
+  </head>
+
+  <body>
+    <h1>Notes App</h1>
+
+    <input
+      type="search"
+      name="search-note"
+      id="search-note"
+      placeholder="Filter Notes"
+    />
+    <select id="filter-by">
+      <option value="byEdited">Sort by last edited</option>
+      <option value="byCreated">Sort by newly created</option>
+      <option value="alphabetical">Sort alphabetically</option>
+    </select>
+
+    <h2>We remember so you can afford to forget!</h2>
+    <div id="notes"></div>
+    <button id="add-note">Create Note</button>
+
+    <!-- js script -->
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+    <script src="notes-functions.js"></script>
+    <script src="notes-app.js"></script>
+  </body>
+</html>

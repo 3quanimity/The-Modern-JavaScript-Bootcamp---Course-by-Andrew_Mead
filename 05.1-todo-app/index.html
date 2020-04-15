@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Todo App</title>
+  </head>
+  <body>
+    <header>
+      <h1>ToDo App</h1>
+      <input type="search" placeholder="Search Todos" id="search-todo-input" />
+      <label>
+        <input type="checkbox" id="hide-completed" /> Hide Completed
+      </label>
+      <!-- summary : todos left -->
+      <h3 id="preview-new-todo"></h3>
+    </header>
+
+    <!-- todos block -->
+    <div id="todos"></div>
+
+    <!-- add new todo -->
+    <form id="add-Todo">
+      <input name="addTodo" placeholder="What needs to get done?" />
+      <button>Add To My List</button>
+    </form>
+
+    <!-- js script -->
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+    <script src="todo-functions.js"></script>
+    <script src="todo-app.js"></script>
+  </body>
+</html>
