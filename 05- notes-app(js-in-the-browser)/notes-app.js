@@ -3,6 +3,7 @@ let notes = getSavedNotes();
 // filters
 const filters = {
   searchText: "",
+  sortBy: "byEdited",
 };
 
 renderNotes(notes, filters);
@@ -30,7 +31,10 @@ document.querySelector("#search-note").addEventListener("input", (e) => {
 });
 
 // Handling #filter-by drop-down
-document.querySelector("#filter-by").addEventListener("input", (e) => {});
+document.querySelector("#filter-by").addEventListener("input", (e) => {
+  filters.sortBy = e.target.value;
+  renderNotes(notes, filters);
+});
 
 // Sync data across pages
 window.addEventListener("storage", function (e) {

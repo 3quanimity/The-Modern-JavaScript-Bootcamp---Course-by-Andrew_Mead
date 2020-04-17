@@ -1,7 +1,3 @@
-// TODO: 1. Add a DOM element between the title and body inputs (empty span)
-// TODO: 2. Set text value: Last edited 4 hours ago
-// TODO: 3.Update value on title/body/storage change
-
 const titleElement = document.querySelector("#note-title");
 const dateElement = document.querySelector("#last-edited");
 const bodyElement = document.querySelector("#note-body");
