@@ -9,14 +9,18 @@ renderNotes(notes, filters);
 
 // Handling Create Note button
 document.querySelector("#add-note").addEventListener("click", () => {
-  const newNote = {
-    id: uuidv4(),
+  const id = uuidv4();
+  const timestamp = moment().valueOf();
+
+  notes.push({
+    id: id,
     title: "",
     body: "",
-  };
-  notes.push(newNote);
+    createdAt: timestamp,
+    updatedAt: timestamp,
+  });
   saveNotes(notes);
-  location.assign(`/edit.html#${newNote.id}`);
+  location.assign(`/edit.html#${id}`);
 });
 
 // Handling search-note input
@@ -35,3 +39,13 @@ window.addEventListener("storage", function (e) {
     renderNotes(notes, filters);
   }
 });
+
+// // 🧪 messing around with momentjs
+// const now = moment().valueOf();
+// console.log("now:", now);
+// now.subtract(1, "week").subtract(20, "days"); // chaining
+// console.log(now.format("MMMM Do, YYYY")); // formating
+// console.log(now.fromNow()); // time from now
+// const nowTimestamp = now.valueOf();
+// console.log(nowTimestamp);
+// console.log(moment(nowTimestamp).toString());

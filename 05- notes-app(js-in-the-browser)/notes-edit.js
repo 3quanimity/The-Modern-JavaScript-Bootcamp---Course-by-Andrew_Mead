@@ -1,4 +1,9 @@
+// TODO: 1. Add a DOM element between the title and body inputs (empty span)
+// TODO: 2. Set text value: Last edited 4 hours ago
+// TODO: 3.Update value on title/body/storage change
+
 const titleElement = document.querySelector("#note-title");
+const dateElement = document.querySelector("#last-edited");
 const bodyElement = document.querySelector("#note-body");
 const removeElement = document.querySelector("#remove-note");
 const noteId = location.hash.substring(1);
@@ -9,18 +14,26 @@ if (note === undefined) {
   location.assign("/index.html");
 }
 
-// Filling fields from local storage
+// Filling fields from local storage on initial page load
 titleElement.value = note.title;
 bodyElement.value = note.body;
+dateElement.innerHTML = generateLastEdited(note.updatedAt);
 
 // Setup input event for title
 titleElement.addEventListener("input", (e) => {
   note.title = e.target.value;
+  note.updatedAt = moment().valueOf();
+  dateElement.innerHTML = generateLastEdited(note.updatedAt);
+
   saveNotes(notes);
 });
+
 // Setup input event for body
 bodyElement.addEventListener("input", (e) => {
   note.body = e.target.value;
+  note.updatedAt = moment().valueOf();
+  dateElement.innerHTML = generateLastEdited(note.updatedAt);
+
   saveNotes(notes);
 });
 
@@ -44,5 +57,6 @@ window.addEventListener("storage", function (e) {
     // Filling fields from local storage
     titleElement.value = note.title;
     bodyElement.value = note.body;
+    dateElement.innerHTML = generateLastEdited(note.updatedAt);
   }
 });
