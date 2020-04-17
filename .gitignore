@@ -6,3 +6,8 @@ coverage/
 .vscode/
 .env
 *.pdf
+01-basics/
+02-functions/
+03-objects/
+04-arrays/
+06-advanced/
